@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Life in 2024</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleMenu() {
+            document.querySelector('.sidebar').classList.toggle('open');
+            document.querySelector('.overlay').classList.toggle('active');
+        }
+
+        function closeMenu() {
+            document.querySelector('.sidebar').classList.remove('open');
+            document.querySelector('.overlay').classList.remove('active');
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+            closeMenu();
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay" onclick="closeMenu()"></div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a onclick="showSection('home')">Home</a></li>
+            <li><a onclick="showSection('highlights')">Highlights</a></li>
+            <li><a onclick="showSection('first-time')">First Time</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <section id="home">
+            <div class="hero-box">
+                <img src="hanslamion.jpeg" alt="Life in 2024" class="blurred-bg">
+                <h1>My Life in 2024</h1>
+            </div>
+        </section>
+
+        <section id="highlights">
+            <h2>Highlights</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="looking at my rtx.jpeg" alt="Highlight 1">
+                    <p>CHIP COLLINS CHOOSES WHICH RTX HE WILL BUY WHEN HE RECEIVES DOST</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="mybuild1.jpeg" alt="Highlight 2">
+                    <p>KATAS NG BUY AND SELL</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="paguba.jpeg" alt="Highlight 3">
+                    <p>CHIP COLLINS WAS AFRAID OF HIS PC SO CALLED A GREATEST TECHNICIAN</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="first-time">
+            <h2>First Time</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="ramen.jpeg" alt="First Time 1">
+                    <p>FIRST TIME MAG RAMEN SA PINAS</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="headset.jpeg" alt="First Time 2">
+                    <p>BUDOL PARA BUY AND SELL</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="haircut.jpeg" alt="First Time 3">
+                    <p>FIRST TIME I HAVE BEEN FEATURED ON A FB PAGE</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
